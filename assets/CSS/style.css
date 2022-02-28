@@ -1,0 +1,253 @@
+
+/* start global declarations */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    /* v debug mode v*/
+    /* border: 1px solid red; */
+}
+
+body {
+    background-color: rgb(192, 206, 247);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+header {
+    padding: 20px 30px;
+    background-color: rgb(113, 150, 252);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+h2 {
+    color: white;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    font-size: 5vw;
+}
+
+article {
+    display: flex;
+    padding-top: 60px;
+    padding-bottom: 30px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+/* end global declarations */
+
+
+/* start utility classes */
+.center-margin {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+/* end utility classes */
+
+
+/* start header modifications */
+header h1 {
+    font-weight: bold;
+    font-size: 45px;
+    color: white;
+    margin: 0;
+}
+
+header nav {
+    margin: 7px 0;
+    font-size: 25px;
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    color: white;
+}
+
+header nav ul li {
+    padding: 10px;
+}
+/* end header modifications */
+
+
+/* start hero banner  */
+.hero-banner {
+    background-image: url(../Images/Header-Background.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.hero-banner img {
+    width: 25vw;
+    height: 25vw;
+    max-height: 200px;
+    max-width: 200px;
+    min-height: 150px;
+    min-width: 150px;
+    margin-right: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px black;
+    object-fit: cover;
+}
+
+.hero-banner h2 {
+    margin-left: 10px;
+}
+/* end hero banner  */
+
+
+/* target all article headings (about me/projects) */
+article h3 {
+    width: 20%;
+    color: #427cb8;
+    font-size: 2rem;
+    padding-right: 10px;
+    height: 100%;
+    border-right: 3px solid white;
+}
+
+/* target all article content containers */
+article div {
+    width: 60%;
+}
+
+
+/* start about me section */
+/* "about me" description box */
+.description-box {
+    padding-left: 30px;
+    padding-right: 30px;
+    /* min-width: 350px; */
+}
+
+
+
+/* target about me paragraph */
+.about-me p {
+    color: white;
+    text-shadow: 2px 2px 5px #95a6c8;
+    font-size: 26px;
+    width: 80%;
+}
+/* end "about me" section */
+
+
+/* start "my projects" section */
+/* target ALL images in "my projects" article */
+.my-projects img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top left;
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+}
+
+/* target all image links in "my projects" */
+.my-projects a {
+    padding: 10px;
+}
+
+/* target the FIRST image link (main project image) */
+.my-projects a:first-child {
+    width: 100%;
+    min-width: 350px;
+    height: 25vw;
+    padding-top: 0;
+}
+
+/* target the OTHER image links (secondary projects) */
+.my-projects a:not(:first-child) {
+    min-width: 250px;
+    height: 18vw;
+    flex: 0.7;
+}
+
+/* target the image link container */
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 20px 20px 20px
+}
+/* end "my projects" section */
+
+
+/* start footer and "contact me" */
+footer {
+    padding: 20px 30px;
+    background-color: rgb(113, 150, 252);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer h2 {
+    font-size: 25px;
+}
+/* end footer "contact me" */
+
+
+/* start media queries */
+@media screen and (max-width: 810px) {
+
+    /* align all project links evenly in one vertial row */
+    .my-projects .image-container a {
+        width: 100%; 
+        height: 30vw;
+        min-width: 0;
+        flex: none;
+    }
+
+    /* let article headings push their content further to the right by expanding themselves with flex: 1; */
+    h3 {
+        flex: 1;
+    }
+
+    /* space between "my projects" heading and content */
+    .my-projects {
+        justify-content: space-between;
+    }
+
+    /* space between "about me" and description */
+    .about-me {
+        justify-content: space-between;
+    }
+
+
+    /* set description box padding to nothing so the "about me" paragraph can take up more horizontal room */
+    .description-box {
+        padding-right: 0;
+    }
+
+
+    /* change profile icon and "My Portfolio" title from horizontal layout to vertical layout */
+    .hero-banner {
+        flex-direction: column;
+    }
+
+    /* give profile picture a bottom margin to separate title under it */
+    .hero-banner img {
+        margin-bottom: 20px;
+    }
+
+    /* increase size of portfolio title font */
+    .hero-banner h2 {
+        font-size: 10vw;
+    }
+
+}
+/* end media queries */
